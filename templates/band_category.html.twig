@@ -1,0 +1,42 @@
+{% extends "base.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('band') }}
+{% endblock %}
+
+{% block body %}
+    <div class="js-band"
+         data-route="{{ path('band_listing', {'start': 0, 'limit': 100}) }}"
+         data-route-detail="{{ path('band_detail', {'id': 0}) }}"
+    ></div>
+
+    <div class="grid-container">
+        <div class="grid-item-category">
+            <h1 class="title">Band - Management</h1>
+        </div>
+        <div class="grid-item-category">
+            <div class="inner-grid-container-options">
+                <div class="grid-item-category-options">
+                    {{ form(form) }}
+                </div>
+                <div class="grid-item-category-options">
+                    <a id="create-band" class="create-band" href="{{ path('band_create') }}">Erstellen</a>
+                    <a style="display: none; visibility: hidden" id="modify-band" class="modify-band">Bearbeiten</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item-category">
+
+            <div id="inner-category-listing" class="inner-grid-container-band">
+                <div class="inner-grid-item">
+                    <h1 class="inner-title">Bandname</h1>
+                </div>
+                <div class="inner-grid-item">
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

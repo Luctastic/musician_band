@@ -1,0 +1,45 @@
+{% extends "base.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('musician') }}
+{% endblock %}
+
+{% block body %}
+    <div class="js-musician"
+         data-route="{{ path('musician_listing', {'start': 0, 'limit': 100}) }}"
+         data-route-detail="{{ path('musician_detail', {'id': 0}) }}"
+    ></div>
+
+    <div class="grid-container">
+        <div class="grid-item-category">
+            <h1 class="title">Musiker - Management</h1>
+        </div>
+        <div class="grid-item-category">
+            <div class="inner-grid-container-options">
+                <div class="grid-item-category-options">
+                    {{ form(form) }}
+                </div>
+                <div class="grid-item-category-options">
+                    <a id="create-musician" class="create-musician" href="{{ path('musician_create') }}">Erstellen</a>
+                    <a style="display: none; visibility: hidden" id="modify-musician" class="modify-musician">Bearbeiten</a>
+                </div>
+            </div>
+        </div>
+        <div class="grid-item-category">
+
+            <div id="inner-category-listing" class="inner-grid-container">
+                <div class="inner-grid-item">
+                    <h1 class="inner-title">Künstlername</h1>
+                </div>
+                <div class="inner-grid-item">
+                    <h1 class="inner-title">Nachname</h1>
+                </div>
+                <div class="inner-grid-item">
+                </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

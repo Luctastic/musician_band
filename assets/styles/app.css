@@ -1,0 +1,105 @@
+body {
+    font-family: sans-serif;
+    background-color: #565656;
+}
+
+.title {
+    font-size: 50px;
+    color: white;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto;
+    padding: 10px;
+    justify-content: center;
+}
+
+.grid-item-homepage {
+    padding: 10px;
+    text-align: center;
+}
+
+.grid-item-category {
+    padding: 10px;
+    color: white;
+}
+
+.grid-item-title {
+    text-align: center;
+}
+
+.grid-item-category-options {
+    padding: 0 10px;
+    color: white;
+}
+
+.inner-grid-container {
+    display: grid;
+    grid-template-columns: 45% 45% 10%;
+    justify-content: center;
+}
+
+.inner-grid-container-band {
+    display: grid;
+    grid-template-columns: 90% 10%;
+    justify-content: center;
+}
+
+.inner-grid-container-options {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    justify-content: center;
+}
+
+.inner-grid-item {
+    border: 1px solid rgba(255, 255, 255, 0.8);
+
+    color: white;
+    text-align: center;
+}
+
+.inner-title {
+    font-size: 20px;
+    color: white;
+    font-style: italic;
+}
+
+.inner-entity-title {
+    font-size: 15px;
+}
+
+.show-category {
+    border: solid;
+    width: 150px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.create-musician, .modify-musician, .create-band, .modify-band {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+    height: 100%;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#musician_detail > div, #band_detail > div {
+    display: flex;
+    flex-direction: row;
+}
+
+#musician_detail > div > label, #band_detail > div > label, #musician_detail > div > input, #band_detail > div > input {
+    width: 50%;
+}

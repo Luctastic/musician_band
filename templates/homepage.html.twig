@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+{% block body %}
+    <div class="grid-container">
+        <div class="grid-item-homepage">
+            <h1 class="title">Management</h1>
+        </div>
+        <div class="grid-item-homepage">
+            <a class="show-category" href="{{ path('musician_category') }}">Musiker</a>
+        </div>
+        <div class="grid-item-homepage">
+            <a class="show-category" href="{{ path('band_category') }}">Bands</a>
+        </div>
+        <!--<div class="grid-item-homepage">
+            <a class="show-category" href="{{ path('musician_category') }}">Konzerte</a>
+        </div>-->
+    </div>
+{% endblock %}

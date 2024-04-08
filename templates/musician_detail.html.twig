@@ -1,0 +1,26 @@
+{% extends "base.html.twig" %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    {{ encore_entry_script_tags('musicianDetail') }}
+{% endblock %}
+
+{% block body %}
+    <div class="js-band"
+         data-route="{{ path('bands', {'q': ''}) }}"
+         data-bands="{{ musicianBands|json_encode() }}"
+    ></div>
+
+    <div class="grid-container">
+        <div class="grid-item-category grid-item-title">
+            <h1 class="title">Musiker</h1>
+        </div>
+        <div class="grid-item-category">
+            {{ form(form) }}
+        </div>
+        <div class="grid-item-category">
+            <input style="width: 400px" id="musician_detail_tom"/>
+        </div>
+    </div>
+{% endblock %}
